@@ -1,4 +1,4 @@
-# ircleView
+# EWCircleView
 swift轮转动画
 
 实现效果:
