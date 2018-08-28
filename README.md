@@ -1,5 +1,5 @@
 # EWCircleView
-<h3>swift轮转动画</h3>
+<h3>Swift轮转动画</h3>
 
 <h5>实现效果:</h5>
 
