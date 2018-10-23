@@ -193,13 +193,16 @@
 				TargetAttributes = {
 					79D5FF602126C3D30070C034 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 					79D5FF742126C3E70070C034 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = 79D5FF602126C3D30070C034;
 					};
 					79D5FF7F2126C3E70070C034 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = 79D5FF602126C3D30070C034;
 					};
 				};
@@ -439,7 +442,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ethan.circleView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -457,7 +460,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ethan.circleView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -477,7 +480,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ethan.circleViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/circleView.app/circleView";
 			};
@@ -498,7 +501,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ethan.circleViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/circleView.app/circleView";
 			};
@@ -518,7 +521,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ethan.circleViewUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = circleView;
 			};
@@ -538,7 +541,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ethan.circleViewUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = circleView;
 			};

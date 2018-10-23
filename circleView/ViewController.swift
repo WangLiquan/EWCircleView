@@ -145,14 +145,14 @@ class ViewController: UIViewController {
                     if viewArray[i].tag == 0{
                         viewArray[i].transform = viewArray[i].transform.scaledBy(x: 1.5, y: 1.5)
                         viewArray[i].tag = 1
-                        contentView.bringSubview(toFront: viewArray[i])
+                        contentView.bringSubviewToFront(viewArray[i])
                     }
                 }
                 else {
                     if viewArray[i].tag == 1 {
                         viewArray[i].transform = viewArray[i].transform.scaledBy(x: 1/1.5, y: 1/1.5)
                         viewArray[i].tag = 0
-                        contentView.sendSubview(toBack: viewArray[i])
+                        contentView.sendSubviewToBack(viewArray[i])
                     }
                 }
             }
