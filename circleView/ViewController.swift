@@ -25,6 +25,7 @@ struct ScreenInfo {
 let MENURADIUS = 0.5 * ScreenInfo.Width
 // 中心view比例
 let PROPORTION: Float = 0.65
+
 func DIST(pointA: CGPoint, pointB: CGPoint) -> CGFloat {
     let pointX = (pointA.x - pointB.x) * (pointA.x - pointB.x)
     let pointY = (pointA.y - pointB.y) * (pointA.y - pointB.y)
@@ -49,7 +50,6 @@ class ViewController: UIViewController {
         updateCircleViews()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
     /// 添加背景view,也是旋转的view
     private func setContentView() {
         setCircleView()
