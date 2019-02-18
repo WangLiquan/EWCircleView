@@ -12,8 +12,8 @@
 		79D5FF6A2126C3D30070C034 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79D5FF682126C3D30070C034 /* Main.storyboard */; };
 		79D5FF6C2126C3E70070C034 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79D5FF6B2126C3E70070C034 /* Assets.xcassets */; };
 		79D5FF6F2126C3E70070C034 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79D5FF6D2126C3E70070C034 /* LaunchScreen.storyboard */; };
-		79D5FF7A2126C3E70070C034 /* circleViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D5FF792126C3E70070C034 /* circleViewTests.swift */; };
-		79D5FF852126C3E70070C034 /* circleViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D5FF842126C3E70070C034 /* circleViewUITests.swift */; };
+		79D5FF7A2126C3E70070C034 /* CircleViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D5FF792126C3E70070C034 /* CircleViewTests.swift */; };
+		79D5FF852126C3E70070C034 /* CircleViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D5FF842126C3E70070C034 /* CircleViewUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,10 +42,10 @@
 		79D5FF6E2126C3E70070C034 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		79D5FF702126C3E70070C034 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79D5FF752126C3E70070C034 /* circleViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = circleViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		79D5FF792126C3E70070C034 /* circleViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = circleViewTests.swift; sourceTree = "<group>"; };
+		79D5FF792126C3E70070C034 /* CircleViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleViewTests.swift; sourceTree = "<group>"; };
 		79D5FF7B2126C3E70070C034 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79D5FF802126C3E70070C034 /* circleViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = circleViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		79D5FF842126C3E70070C034 /* circleViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = circleViewUITests.swift; sourceTree = "<group>"; };
+		79D5FF842126C3E70070C034 /* CircleViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleViewUITests.swift; sourceTree = "<group>"; };
 		79D5FF862126C3E70070C034 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,7 +110,7 @@
 		79D5FF782126C3E70070C034 /* circleViewTests */ = {
 			isa = PBXGroup;
 			children = (
-				79D5FF792126C3E70070C034 /* circleViewTests.swift */,
+				79D5FF792126C3E70070C034 /* CircleViewTests.swift */,
 				79D5FF7B2126C3E70070C034 /* Info.plist */,
 			);
 			path = circleViewTests;
@@ -119,7 +119,7 @@
 		79D5FF832126C3E70070C034 /* circleViewUITests */ = {
 			isa = PBXGroup;
 			children = (
-				79D5FF842126C3E70070C034 /* circleViewUITests.swift */,
+				79D5FF842126C3E70070C034 /* CircleViewUITests.swift */,
 				79D5FF862126C3E70070C034 /* Info.plist */,
 			);
 			path = circleViewUITests;
@@ -135,6 +135,7 @@
 				79D5FF5D2126C3D30070C034 /* Sources */,
 				79D5FF5E2126C3D30070C034 /* Frameworks */,
 				79D5FF5F2126C3D30070C034 /* Resources */,
+				79BBB7A1221A8B74007A3800 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -254,6 +255,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		79BBB7A1221A8B74007A3800 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		79D5FF5D2126C3D30070C034 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -268,7 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79D5FF7A2126C3E70070C034 /* circleViewTests.swift in Sources */,
+				79D5FF7A2126C3E70070C034 /* CircleViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79D5FF852126C3E70070C034 /* circleViewUITests.swift in Sources */,
+				79D5FF852126C3E70070C034 /* CircleViewUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

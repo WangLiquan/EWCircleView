@@ -18,27 +18,23 @@ struct ScreenInfo {
         return UIScreen.main.bounds.equalTo(CGRect(x: 0, y: 0, width: 375, height: 812))
     }
     static private func navBarHeight() -> CGFloat {
-        return isIphoneX() ? 88 : 64;
+        return isIphoneX() ? 88 : 64
     }
 }
 // 子view比例
 let MENURADIUS = 0.5 * ScreenInfo.Width
 // 中心view比例
 let PROPORTION: Float = 0.65
-
-func DIST(pointA: CGPoint, pointB: CGPoint) -> CGFloat{
-    let x = (pointA.x - pointB.x) * (pointA.x - pointB.x)
-    let y = (pointA.y - pointB.y) * (pointA.y - pointB.y)
-    return CGFloat(sqrtf(Float(x + y)))
+func DIST(pointA: CGPoint, pointB: CGPoint) -> CGFloat {
+    let pointX = (pointA.x - pointB.x) * (pointA.x - pointB.x)
+    let pointY = (pointA.y - pointB.y) * (pointA.y - pointB.y)
+    return CGFloat(sqrtf(Float(pointX + pointY)))
 }
 
 class ViewController: UIViewController {
 
     private var beginPoint: CGPoint?
     private var orgin: CGPoint?
-    private var a: CGFloat?
-    private var b: CGFloat?
-    private var c: CGFloat?
     private var subArray: [String] = ["1","2","3","4","5","6","7","8","1","2","3","4","5","6","7","8","1","2","3","4","5","6","7","8"]
     // 背景view
     private var contentView: UIView?
@@ -63,7 +59,7 @@ class ViewController: UIViewController {
         contentView!.addSubview(circleView!)
     }
     /// 添加中间圆形view
-    private func setCircleView(){
+    private func setCircleView() {
         let view = UIImageView()
         /// 为了适配保证size变化center不变
         let centerPoint = CGPoint(x: ScreenInfo.Width / 2, y: ScreenInfo.Width / 2)
@@ -77,13 +73,12 @@ class ViewController: UIViewController {
     }
     /// 布局旋转的子view
     private func rotationCircleCenter(contentOrgin: CGPoint,
-                                      contentRadius: CGFloat,subnode: [String]){
+                                      contentRadius: CGFloat,subnode: [String]) {
         // 添加比例,实现当要添加的子view数量较多时候可以自适应大小.
         var scale: CGFloat = 1
         if subnode.count > 10 {
             scale = CGFloat(CGFloat(subnode.count) / 13.0)
         }
-
         for i in 0..<subnode.count {
             let x = contentRadius * CGFloat(sin(.pi * 2 / Double(subnode.count) * Double(i)))
             let y = contentRadius * CGFloat(cos(.pi * 2 / Double(subnode.count) * Double(i)))
@@ -112,7 +107,7 @@ class ViewController: UIViewController {
         self.rotationCircleCenter(contentOrgin: CGPoint(x: MENURADIUS, y: MENURADIUS), contentRadius: MENURADIUS,subnode:subArray)
     }
     /// 获取手指触摸位置,超过范围不让旋转交互
-    private func touchPointInsideCircle(center: CGPoint, radius: CGFloat, targetPoint: CGPoint) -> Bool{
+    private func touchPointInsideCircle(center: CGPoint, radius: CGFloat, targetPoint: CGPoint) -> Bool {
         let dist = DIST(pointA: targetPoint, pointB: center)
         return (dist <= radius)
     }
@@ -125,10 +120,7 @@ class ViewController: UIViewController {
         guard let circleView = circleView else { return }
         orgin = CGPoint(x: 0.5 * ScreenInfo.Width, y: MENURADIUS + 0.17 * ScreenInfo.Height)
         let currentPoint = touches.first?.location(in: self.view)
-        if self.touchPointInsideCircle(center: orgin!, radius: MENURADIUS*1.45, targetPoint: currentPoint!){
-            b = DIST(pointA: beginPoint!, pointB: orgin!)
-            c = DIST(pointA: currentPoint!, pointB: orgin!)
-            a = DIST(pointA: beginPoint!, pointB: orgin!)
+        if self.touchPointInsideCircle(center: orgin!, radius: MENURADIUS*1.45, targetPoint: currentPoint!) {
             let angleBegin = atan2(beginPoint!.y - orgin!.y, beginPoint!.x - orgin!.x)
             let angleAfter = atan2(currentPoint!.y - orgin!.y, currentPoint!.x - orgin!.x)
             let angle = angleAfter - angleBegin
@@ -143,13 +135,12 @@ class ViewController: UIViewController {
                 let rect = viewArray[i].convert(viewArray[i].bounds, to: UIApplication.shared.keyWindow)
                 let viewCenterX = rect.origin.x + (rect.width) / 2
                 if viewCenterX > self.view.center.x - 20 && viewCenterX < self.view.center.x + 20 && rect.origin.y > contentView.center.y {
-                    if viewArray[i].tag == 0{
+                    if viewArray[i].tag == 0 {
                         viewArray[i].transform = viewArray[i].transform.scaledBy(x: 1.5, y: 1.5)
                         viewArray[i].tag = 1
                         contentView.bringSubviewToFront(viewArray[i])
                     }
-                }
-                else {
+                } else {
                     if viewArray[i].tag == 1 {
                         viewArray[i].transform = viewArray[i].transform.scaledBy(x: 1/1.5, y: 1/1.5)
                         viewArray[i].tag = 0
@@ -165,7 +156,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 
@@ -185,7 +175,7 @@ class EWSubView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    func drawSubView(){
+    func drawSubView() {
         self.layer.cornerRadius = self.frame.width / 2
         self.imageView.frame = CGRect(x: 0, y:0 , width: self.frame.width, height: self.frame.width)
     }
