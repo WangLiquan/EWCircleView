@@ -16,14 +16,13 @@ Swift轮转动画
 最下方的view变大是循环判断子view.frame.x,当它处于一个范围,并且frame.y小于中心view.frame.y的时候.修改它的transform,来使其变大,并且修改它的tag来标记它已经属于变大状态,当它frame.x超出了预定范围,使其还原.
 
 # 实现方式:
+1. 添加背景透明view,中心圆圈view.
 
-1.添加背景透明view,中心圆圈view.
+2. 添加周围旋转子view.
 
-2.添加周围旋转子view.
+3. 添加旋转方法.
 
-3.添加旋转方法.
-
-4.交互优化.
+4. 交互优化.
 
 
 ![效果图预览](https://github.com/WangLiquan/circleView/raw/master/images/demonstration.gif)
